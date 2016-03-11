@@ -1,0 +1,69 @@
+{
+  "name": "npm-site-skeleton",
+  "version": "0.0.1",
+  "description": "The basic website starting skeleton for a front-end build process handled by Node.js.",
+  "author": "John Foster",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [
+    "front-end",
+    "skeleton",
+    "npm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jf990/npm-site-skeleton"
+  },
+  "devDependencies": {
+    "bootstrap": "latest",
+    "browser-sync": "latest",
+    "dateformat": "latest",
+    "intern": "latest",
+    "graceful-fs": "latest",
+    "highlight.js": "latest",
+    "jquery": "latest",
+    "lodash": "latest",
+    "node-sass": "latest",
+    "npm-run-all": "latest",
+    "parallelshell": "latest",
+    "path": "latest",
+    "requirejs": "latest",
+    "rimraf": "latest",
+    "rsync": "latest",
+    "shelljs": "latest"
+  },
+  "scripts": {
+    "//": "--------------------------------------------------------------------",
+    "//": " watch: build for local development and start a browser watch",
+    "//": "--------------------------------------------------------------------",
+    "watch": "node bin/watch-site.js './public'",
+
+    "//": "--------------------------------------------------------------------",
+    "//": " deploy: run all unit tests, build for production",
+    "//": "--------------------------------------------------------------------",
+    "predeploy": "node bin/set-environment-target.js development && npm-run-all develop",
+    "deploy": "parallelshell \"npm run acetate:server\" \"rerun-script\"",
+
+    "//": "--------------------------------------------------------------------",
+    "//": " shortcut commands you should be using:",
+    "//": "   remodule: delete all node.js modules and reinstall them.",
+    "//": "   clean: remove all temporary and built files. You can always rebuild.",
+    "//": "   env: List all environment variables.",
+    "//": "   test-unit: Run all unit tests.",
+    "//": "   test-fn: Run all functional tests. These will run in a browser.",
+    "//": "   test-all: Run all unit tests and all functional tests.",
+    "//": "   dev: Same as watch. Run the development build, start the file watcher, load index.html in a browser.",
+    "//": "   deploy: Run the production build, run all tests, deploy to the public/dist folder.",
+    "//": "--------------------------------------------------------------------",
+    "remodule": "rimraf node_modules && npm install",
+    "clean": "rimraf ./dist && rimraf ./public",
+    "env": "env",
+    "test-unit": "intern-client config=tests/intern",
+    "test-fn": "intern-runner config=tests/intern",
+    "test-all": "npm-run-all test-unit test-fn",
+
+    "start": "npm-run-all test-unit clean build watch",
+    "build": "node bin/build-site.js './src/app' './public'",
+    "dev": "npm run watch"
+  }
+}

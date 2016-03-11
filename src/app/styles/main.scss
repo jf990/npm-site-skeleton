@@ -1,0 +1,30 @@
+// Font weights
+$light: 100;
+$regular: 400;
+$bold: 600;
+
+// Base Font
+$base-font-family: sans-serif;
+$base-font-weight: $regular;
+$base-font-size: 14px;
+$base-line-height: 1.4;
+
+// Fixed Font
+$fixed-font-family: monospace;
+$fixed-font-size: 85%;
+$fixed-line-height: $base-line-height;
+
+// Color scheme
+$primary-color: #ffc7ca;
+$primary-background-color: #0a0a0a;
+$secondary-color: #a8465e;
+$secondary-background-color: #2f2f2f;
+
+body {
+    color: $primary-color;
+    background-color: $primary-background-color;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    font-weight: $base-font-weight;
+    line-height: $base-line-height;
+}

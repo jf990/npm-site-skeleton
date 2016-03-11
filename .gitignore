@@ -1,0 +1,61 @@
+# Mac & Windows crap
+.DS_Store
+Icon
+._*
+.Spotlight-V100
+.cache/
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.zip
+*.lnk
+
+# SASS
+.sass-cache
+.cache
+
+# Ignore Node Modules
+node_modules/
+
+# Ignore complexity output
+complexity.xml
+
+# Ignore Coverage output
+coverage
+.coverage
+
+# Ignore Grunt temp files
+.grunt
+
+# Ignore Build Folders
+public/
+build/
+dist/
+
+# Ignore link checker cache
+.link-checker-cache
+
+# Ignore captures from visual regression tool
+captures
+
+# Ignore local environmental variables
+.env
+
+# Ignore logs
+*.log
+
+# IntelliJ
+.idea
+
+# VIM
+*.swp
+*.swo
+
+# SublimeText
+/*.sublime-project
+*.sublime-workspace
